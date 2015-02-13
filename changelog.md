@@ -1,4 +1,4 @@
 # CHANGELOG
 
 ##1.0.0
-* Create first module version
+* Create first CB4 Module version

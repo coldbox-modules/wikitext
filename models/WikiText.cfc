@@ -20,23 +20,20 @@ component accessors="true" singleton{
 	*/
 	function init(){
 		/* WikiParser Lib Path */
-		variables.parserLibPath = getDirectoryFromPath(getMetadata(this).path) & "lib";
-		/* Setup Patterns empty */
+		variables.parserLibPath = getDirectoryFromPath( getMetadata( this ).path ) & "lib";
 		setLinkBaseURL('${title}');
 		setImageBaseURL('${image}');
-		/* Setup Allowed Attributes */
 		setAllowedAttributes('style,url');
-		/* Ignore Tag List */
 		setIgnoreTagList('img');
 
-		/* Internal Constants For Translation */
-		variables.WIKIPEDIA = "info.bliki.html.wikipedia.ToWikipedia";
-		variables.GOOGLECODE = "info.bliki.html.googlecode.ToGoogleCode";
-		variables.TRAC = "info.bliki.html.googlecode.ToTrac";
-		variables.MOINMOIN = "info.bliki.html.googlecode.ToMoinMoin";
-		variables.JSPWIKI = "info.bliki.html.jspwiki.ToJSPWiki";
-		/* Setup Translators */
-		variables.translators = "WIKIPEDIA,GOOGLECODE,JSPWIKI,MOINMOIN,TRAC";
+		// Internal Constants For Translation
+		variables.WIKIPEDIA 	= "info.bliki.html.wikipedia.ToWikipedia";
+		variables.GOOGLECODE 	= "info.bliki.html.googlecode.ToGoogleCode";
+		variables.TRAC 			= "info.bliki.html.googlecode.ToTrac";
+		variables.MOINMOIN 		= "info.bliki.html.googlecode.ToMoinMoin";
+		variables.JSPWIKI 		= "info.bliki.html.jspwiki.ToJSPWiki";
+		// Translators
+		variables.translators 	= "WIKIPEDIA,GOOGLECODE,JSPWIKI,MOINMOIN,TRAC";
 
 		return this;
 	}

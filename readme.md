@@ -1,9 +1,12 @@
-WELCOME TO THE BUGLOGHQ MODULE
+WELCOME TO THE WIKITEXT MODULE
 ==============================
-BugLogHQ Created & copyright by Oscar Arevalo (www.bugloghq.com)
+This module translates mediawiki syntax into HTML, but it can also convert HTML into several markup languages like:
 
-This module connects your ColdBox application to send bug reports and even
-LogBox integration into BugLogHQ
+* Wikipedia (Mediawiki)
+* googlecode
+* Trac
+* Moin Moin
+* JSP Wiki
 
 ##LICENSE
 Apache License, Version 2.0.
@@ -17,6 +20,31 @@ Apache License, Version 2.0.
 - ColdFusion 9+
 - BugLogHQ 1.8+
 - ColdBox 4+
+
+# INSTRUCTIONS
+
+Just drop into your modules folder or use CommandBox to install
+
+`box install wikitext`
+
+The module registers the wiki converter model: `wikitext@wikitext`.  You can then use the following functions to convert markup and HTML and vice-versa:
+
+
+```js
+/**
+* Convert an HTML string to wiki syntax
+* @wikiTranslator The wiki syntax to use. It must be using a valid translator. See getTranslators()
+* @htmlString The html string to convert
+*/
+function toWiki( required wikiTranslator, required htmlString )
+
+/**
+* Convert wiki text and return a structure with two keys: [wikiModel=The java wiki model object,html=the converted html string]
+* @wikitext The wiki text to convert to HTML
+*/
+function toHTML( required wikitext )
+
+```
 
 ********************************************************************************
 Copyright Since 2005 ColdBox Framework by Luis Majano and Ortus Solutions, Corp
