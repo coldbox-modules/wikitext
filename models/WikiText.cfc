@@ -59,7 +59,7 @@ component accessors="true" singleton{
 		/* create converter */
 		converter = javaLoader.create("info.bliki.html.HTML2WikiConverter").init(arguments.htmlString);
 		/* Create Syntax Translator */
-		translator = javaLoader.create(instance[arguments.wikiTranslator]).init();
+		translator = javaLoader.create(variables[arguments.wikiTranslator]).init();
 
 		return converter.toWiki(translator);
 	}
