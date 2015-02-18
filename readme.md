@@ -11,14 +11,10 @@ This module translates mediawiki syntax into HTML, but it can also convert HTML 
 ##LICENSE
 Apache License, Version 2.0.
 
-##IMPORTANT LINKS
-- http://www.bugloghq.com
-- https://github.com/ColdBox/cbox-bugloghq
-
 ##SYSTEM REQUIREMENTS
+- Lucee 4.5+
 - Railo 4+
 - ColdFusion 9+
-- BugLogHQ 1.8+
 - ColdBox 4+
 
 # INSTRUCTIONS
