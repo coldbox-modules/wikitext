@@ -25,7 +25,6 @@ Just drop into your modules folder or use CommandBox to install
 
 The module registers the wiki converter model: `wikitext@wikitext`.  You can then use the following functions to convert markup and HTML and vice-versa:
 
-
 ```js
 /**
 * Convert an HTML string to wiki syntax
@@ -40,6 +39,26 @@ function toWiki( required wikiTranslator, required htmlString )
 */
 function toHTML( required wikitext )
 
+```
+
+
+## Settings
+You can create a `wikitext` settings structure in your `ColdBox.cfc` with the following options:
+
+```js
+//defaults
+wikitext = {
+    // The link pattern to translate internal links
+    linkPattern = "${title}",
+    // The base URL of the UI module
+    linkBaseURL = "",
+    // The image base URL
+    imageBaseURL = "",
+    // Allowed wiki attributed
+    allowedAttributes = "style,url",
+    // Ignored tags on conversion
+    ignoreTagList = "img,iframe"
+};
 ```
 
 ********************************************************************************

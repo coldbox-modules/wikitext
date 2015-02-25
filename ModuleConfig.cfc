@@ -8,7 +8,7 @@ component {
 	this.author 			= "Luis Majano";
 	this.webURL 			= "http://www.ortussolutions.com";
 	this.description 		= "A module to produce mediaki markup text to HTML";
-	this.version			= "1.0.0";
+	this.version			= "1.1.0";
 	// If true, looks for views in the parent first, if not found, then in the module. Else vice-versa
 	this.viewParentLookup 	= true;
 	// If true, looks for layouts in the parent first, if not found, then in module. Else vice-versa
@@ -33,17 +33,45 @@ component {
 	* Fired when the module is registered and activated.
 	*/
 	function onLoad(){
-		// setup load paths
-		controller.getWireBox().getInstance( "loader@cbjavaloader" )
-			.appendPaths( expandPath( '#moduleMapping#/models/lib' ) );
-		// startup the engines
-		controller.getWireBox().getInstance( "WikiText@WikiText" ).configure();
+		// parse parent settings
+		parseParentSettings();
+		// Startup Wiki Engine
+		controller.getWireBox()
+			.getInstance( "wikiText@WikiText" )
+			.configure( controller.getConfigSettings().wikitext );
 	}
 
 	/**
 	* Fired when the module is unregistered and unloaded
 	*/
 	function onUnload(){
+
+	}
+
+	/**
+	* parse parent settings
+	*/
+	private function parseParentSettings(){
+		var oConfig 		= controller.getSetting( "ColdBoxConfig" );
+		var configStruct 	= controller.getConfigSettings();
+		var settings 		= oConfig.getPropertyMixin( "wikitext", "variables", structnew() );
+
+		//defaults
+		configStruct.wikitext = {
+			// The link pattern to translate internal links
+			linkPattern = "${title}",
+			// The base URL of the UI module
+			linkBaseURL = "",
+			// The image base URL
+			imageBaseURL = "",
+			// Allowed wiki attributed
+			allowedAttributes = "style,url",
+			// Ignored tags on conversion
+			ignoreTagList = "img,iframe"
+		};
+
+		// incorporate settings
+		structAppend( configStruct.wikitext, settings, true );
 
 	}
 
