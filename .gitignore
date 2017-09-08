@@ -1,0 +1,15 @@
+.settings
+logs/*.log
+settings.xml
+.netbeans
+tests/results/*
+artifacts/*
+apidocs/docbox/*
+build/*
+
+# Dependencies
+workbench/*
+modules/cbjavaloader/*
+coldbox/*
+testbox/*
+
