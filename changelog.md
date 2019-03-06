@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.3.1
+
+* Updated location protocol
+
 ## 1.3.0
 
 * Updated JavaLoader due to security fixes
