@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.3.2
+
+* `improvement` : Removed entrypoint for cleanup of routes
+
 ## 1.3.1
 
 * Updated location protocol
