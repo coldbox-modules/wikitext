@@ -41,6 +41,8 @@ function toHTML( required wikitext )
 
 ```
 
+## Syntax Guide
+The guide to the syntax is located at [https://www.mediawiki.org/wiki/Help:Formatting](https://www.mediawiki.org/wiki/Help:Formatting).
 
 ## Settings
 You can create a `wikitext` settings structure in your `ColdBox.cfc` with the following options:
